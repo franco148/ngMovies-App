@@ -7,20 +7,31 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { MoviesService } from './services/movies.service';
 
 
+//Routes
+import { APP_ROUTING } from './app.routes';
+
+//Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { MovieComponent } from './components/movie/movie.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent,
+    MovieComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    APP_ROUTING
   ],
   providers: [
     MoviesService

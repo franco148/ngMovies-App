@@ -32,3 +32,33 @@ export class MoviesService {
   }
 
 }
+
+
+// this._service.getMovie("wall-e").subscribe(data=>console.log(data));
+//
+// image.tmdb.org/t/p/w300/iX3RJLK
+// ======================================================================
+// - crear una aplicacion de peliculas
+// - Usar el API de themoviedb.org
+// - Deben usar rutas.
+// - Deben de usar parametros de ruta
+// - Deben de usar bootstrap 4
+// - Tiene q tener por lo menos la siguiente estructura
+// * NavBar con por lo menos home, y busqueda
+// * home
+// 	- Peliculas en la cartelera de cines actual
+// 	- Peliculas populares
+// 	- Peliculas para ninios mas populares
+// 		* Al hacer click en cualquier pelicula, debe de llevarme
+// 		  a una pantalla que me permita ver informacion de la pelicula.
+// * Bucador
+// 	- Debe de poder buscar peliculas
+// 	- Deben de aparecer de forma elegante con la imagen del poster
+// 	- Al hacer click, llevarme a ver la informacion de la pelicula.
+//
+// * Pagina de informacion.
+// 	- Esta pantalla debe de mostrar por lo menos, la imagen del poster grande.
+// 	- Debe de mostrar la sinopsis de la pelicula.
+// 	- Debe poder regresar a la pagina anterior
+// 		* La pagina anterior, es decir, silo llame del HOME, debe de regresar
+// 		  al HOME, si la llame del buscador, debe de regresarme al BUSCADOR.
