@@ -1,0 +1,24 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">ngMovies Application</h1>
+    <p class="lead">This is an application for searching your movies.</p>
+  </div>
+</div>
+
+<div class="container">
+  <br>
+
+  <!-- <h1>Billboard</h1>
+  <hr> -->
+
+  <!-- <app-gallery [movies]="billboard"></app-gallery> -->
+
+  <!-- Or for improving the previous one. Not send the whole data (sending 6) -->
+  <app-gallery [movies]="billboard|slice:0:6" title="Billboard movies"></app-gallery>
+
+  <app-gallery [movies]="populars|slice:0:6" title="Popular movies"></app-gallery>
+
+  <app-gallery [movies]="childrenMovies|slice:0:6" title="Popular movies for Children"></app-gallery>
+
+
+</div>
