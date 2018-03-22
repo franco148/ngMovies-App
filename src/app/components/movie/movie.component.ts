@@ -11,6 +11,7 @@ export class MovieComponent implements OnInit {
 
   movie:any;
   returnTo:string="";
+  searchText:string="";
 
   constructor(public _moviesService: MoviesService,
               public route: ActivatedRoute) {
@@ -23,6 +24,10 @@ export class MovieComponent implements OnInit {
         console.log(movieReponse);
         this.movie = movieReponse;
         this.returnTo = parameters['prevpage'];
+
+        if (parameters['searchText']) {
+            this.searchText = parameters['searchText'];
+        }
       });
     });
   }

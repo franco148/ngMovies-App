@@ -10,6 +10,7 @@ const APP_ROUTES: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'search/:movie', component: SearchComponent },
   { path: 'movie/:id/:prevpage', component: MovieComponent },
+  { path: 'movie/:id/:prevpage/:searchText', component: MovieComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
