@@ -20,7 +20,13 @@ export class MoviesService {
     //                 .map(resp => resp.json());
 
     return this.jsonp.get( url )
-                .map( res=> res.json());
+                .map( res=> res.json().results);
+  }
+
+  getPopularsForChildren() {
+    let url = `${ this.urlMoviedb }/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
+    return this.jsonp.get( url )
+                .map( res=> res.json().results);
   }
 
   buscarPelicula( texto:string ){
@@ -28,7 +34,7 @@ export class MoviesService {
     let url = `${ this.urlMoviedb }/search/movie?query=${ texto }&sort_by=popularity.desc&api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
 
     return this.jsonp.get( url )
-                .map( res=> res.json());
+                .map( res=> res.json().results);
   }
 
   getCartelera() {
@@ -43,7 +49,7 @@ export class MoviesService {
     let url = `${ this.urlMoviedb }/discover/movie?primary_release_date.gte=${ fromDateStr }&primary_release_date.lte=${ toDateStr }&api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
 
     return this.jsonp.get( url )
-                .map( res=> res.json());
+                .map( res=> res.json().results);
   }
 
 }

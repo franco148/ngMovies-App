@@ -9,9 +9,15 @@ import { MoviesService } from '../../services/movies.service';
 })
 export class HomeComponent implements OnInit {
 
+  billboard:any;
+
   constructor(public _moviesService: MoviesService) {
     this._moviesService.getCartelera()
-                       .subscribe(data => console.log(data));
+                       .subscribe(data => {
+                         // console.log(data);
+                         this.billboard = data;
+                         // console.log('billboard !!!!!', this.billboard);
+                       });
   }
 
   ngOnInit() {
