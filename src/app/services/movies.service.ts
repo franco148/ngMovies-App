@@ -57,6 +57,17 @@ export class MoviesService {
                 .map( res=> res.json().results);
   }
 
+  getMovieById(id:string){
+
+    let url = `${ this.urlMoviedb }/movie/${id}?api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
+
+    // return this.http.get(url)
+    //                 .map(resp => resp.json());
+
+    return this.jsonp.get( url )
+                .map( res=> res.json());
+  }
+
 }
 
 
