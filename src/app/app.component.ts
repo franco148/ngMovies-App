@@ -9,7 +9,7 @@ import { MoviesService } from './services/movies.service';
 export class AppComponent {
 
   constructor(public _moviesService: MoviesService) {
-    this._moviesService.getPopulares()
-        .subscribe(data => console.log(data));
+    // this._moviesService.getPopulares()
+    //     .subscribe(data => console.log(data));
   }
 }

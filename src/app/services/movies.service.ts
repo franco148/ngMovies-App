@@ -31,6 +31,21 @@ export class MoviesService {
                 .map( res=> res.json());
   }
 
+  getCartelera() {
+
+    let fromDate = new Date();
+    let toDate = new Date();
+    toDate.setDate(toDate.getDate() + 7);
+
+    let fromDateStr = `${ fromDate.getFullYear() }-${ fromDate.getMonth() + 1 }-${ fromDate.getDate() }`;
+    let toDateStr = `${ toDate.getFullYear() }-${ toDate.getMonth() + 1 }-${ toDate.getDate() }`;
+
+    let url = `${ this.urlMoviedb }/discover/movie?primary_release_date.gte=${ fromDateStr }&primary_release_date.lte=${ toDateStr }&api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
+
+    return this.jsonp.get( url )
+                .map( res=> res.json());
+  }
+
 }
 
 

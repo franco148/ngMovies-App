@@ -9,7 +9,10 @@ import { MoviesService } from '../../services/movies.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _moviesService: MoviesService) {
+    this._moviesService.getCartelera()
+                       .subscribe(data => console.log(data));
+  }
 
   ngOnInit() {
   }
